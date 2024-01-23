@@ -129,6 +129,14 @@ curl -X 'POST' \
 - [FastAPI Documentation](https://fastapi.tiangolo.com/)
 - [Uvicorn Documentation](https://www.uvicorn.org/)
 
+## References
+<a>https://github.com/UKPLab/sentence-transformers</a> </br></br>
+
+Reimers, Nils and Gurevych, Iryna</br>
+Making Monolingual Sentence Embeddings Multilingual using Knowledge Distillation.<a>https://arxiv.org/abs/2004.09813</a></br>
+Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing.</br>
+
+
 ---
 
 Please remember to replace placeholders like `http://127.0.0.1:8000` with your actual API endpoint if needed. Additionally, include any additional sections or information that is specific to your project.
