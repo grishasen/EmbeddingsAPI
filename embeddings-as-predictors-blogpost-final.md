@@ -2,8 +2,6 @@
 
 ### How LLM embeddings can help with offer cold-start in retail-banking next-best-action — and how to keep them interpretable
 
-*Applied data science write-up · ~20 min read*
-
 ---
 
 ## TL;DR
