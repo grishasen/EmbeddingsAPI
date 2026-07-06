@@ -175,7 +175,17 @@ Typical output on our corpus (fictional, as always) — the auto-loan component 
   # -> every top item is French, regardless of product: a language component
 ```
 
-The language component is a nice confirmation that ICA recovers *real factors of variation* in the corpus, because language genuinely is an independent factor — any product can appear in any language. And it's not a party trick: train a probe to predict the text's language from the ICA scores, rank the features, and that component heads the importance ranking — its extreme examples are exactly the copy in one language. One concept, one component, one predictor — the property Naive Bayes always wanted and embeddings never gave it.
+The language component is a nice confirmation that ICA recovers *real factors of variation* in the corpus, because language genuinely is an independent factor — any product can appear in any language. And it's not a party trick — it's the cleanest way to *see* everything this post has argued so far. Train the same language probe three times, on the raw dimensions, the PCA scores, and the ICA scores, and compare the SHAP summary plots:
+
+*[FIGURE 6 — SHAP importance for the language probe, three panels: raw / PCA / ICA]*
+
+The progression in our run:
+
+- **Raw:** importance smeared across dozens of correlated dimensions — the top feature carries only a small share of the total. This is §2's credit-splitting, photographed.
+- **PCA:** importance collapses onto the *first* component, with a visible second-place remainder. No surprise once you know what PCA optimizes: language is the dominant factor of variation in a bilingual corpus, so the top variance axis catches it. PCA does make the *biggest* theme nameable — it just blends everything below it.
+- **ICA:** a single component carries essentially all of it. One concept, one component, one predictor — the property Naive Bayes always wanted and embeddings never gave it.
+
+Same information in every panel (full-rank transforms, remember), radically different arrangement. That figure is the article's thesis in one image.
 
 **Closing the loop with the propensity model.** As in the first post, the payoff comes from chaining: train the model on ICA components, rank components by importance, then name the top ones:
 
@@ -192,7 +202,7 @@ And a small trick that lands surprisingly well with stakeholders: **plot an actu
 clf.plot_tree(tree_idx=0, pool=pool)
 ```
 
-*[FIGURE 6 — one CatBoost tree over ICA features: first split on the "auto-loan" component]*
+*[FIGURE 7 — one CatBoost tree over ICA features: first split on the "auto-loan" component]*
 
 When the features are named ICA components, the tree's top splits read as business rules — "if auto-loan-ness is high and the customer's vehicle-finance activity is recent, propensity goes up." The same tree over raw embedding dimensions reads as noise. Nothing about the model changed; only the basis did.
 
