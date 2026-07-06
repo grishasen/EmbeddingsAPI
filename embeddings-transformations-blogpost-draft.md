@@ -179,6 +179,7 @@ The language component is a nice confirmation that ICA recovers *real factors of
 <img width="740" height="570" alt="raw" src="https://github.com/user-attachments/assets/53badb50-75a5-4064-909c-ca40799bcbe7" />
 <img width="745" height="600" alt="pca" src="https://github.com/user-attachments/assets/e4f57d3e-8c8c-4a34-a548-ebc416a4012d" />
 <img width="745" height="600" alt="ica" src="https://github.com/user-attachments/assets/36fcf6d1-2601-45db-b139-31bcf9599fd9" />
+
 *[FIGURE 6 — SHAP importance for the language probe, three panels: raw / PCA / ICA]*
 
 The progression in our run:
