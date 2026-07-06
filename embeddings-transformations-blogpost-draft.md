@@ -307,5 +307,3 @@ pca_scores, ica_scores = pca.transform(matrix), ica.transform(matrix)
 # 4. FREEZE AND SHIP -----------------------------------------------------------
 reducer = FrozenLinearReducer(ica.components_, ica.mean_)   # first post, §4
 ```
-
-*Replace `embed`, the corpus, and the model with your own; the checks are the point.*
