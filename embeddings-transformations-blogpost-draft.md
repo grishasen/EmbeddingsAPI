@@ -177,11 +177,6 @@ Typical output on our corpus (fictional, as always) — the auto-loan component 
 
 The language component is a nice confirmation that ICA recovers *real factors of variation* in the corpus, because language genuinely is an independent factor — any product can appear in any language. And it's not a party trick — it's the cleanest way to *see* everything this post has argued so far. Train the same language probe three times, on the raw dimensions, the PCA scores, and the ICA scores, and compare the SHAP summary plots:
 
-<img alt="RAW" src="https://github.com/user-attachments/assets/97ca46a1-b988-4235-aa62-d071fbc9ce36" />
-
-<img alt="PCA" src="https://github.com/user-attachments/assets/fc6a450f-b340-404c-ae04-faf58b4dd97c" />
-
-<img alt="ICA" src="https://github.com/user-attachments/assets/6e354206-889f-407c-a801-64f411cdeb09" />
 
 
 *[FIGURE 6 — SHAP importance for the language probe, three panels: raw / PCA / ICA]*
